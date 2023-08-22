@@ -1,6 +1,8 @@
+
 {% extends 'base.html' %}
 
 {% block content %}
+{% load static %}
 <section id="section1" data-nav="Section 1" class="your-active-class">
      
     <div class="landing__container"></div>
@@ -12,7 +14,7 @@
              <p>
                 Are you ready to embark on an unforgettable journey through your college years? At UniMate, we're here to make sure your student experience is nothing short of amazing.
              </p>
-             <button class="common-btn">
+             <button class="common-btn" id="">
                 Find Your Room or Roommate  
               </button> 
         
@@ -21,7 +23,7 @@
     </div>
        
       <div class="section1-right-col">
-        <img src="images/The Twelves Apostles.jpg" alt="view">
+        <img class="" src="{% static 'images/section1-illustration.png' %}" alt="Logo">
         
       </div>
       
@@ -33,33 +35,36 @@
       <div class="section2-container">
       
         <div class="section2-col">
-          <img src=" " alt="">
+            <div class="circle">
+          <img src="{% static 'images/fi-br-world.png' %}" alt="">
+            </div>
             <h4>
-              Lorem ipsum dolor.
+                Exploration
             </h4>
             <p>
-              Lorem ipsum dolor sit amet, 
-              consectetur adipiscing elit. Maecenas fermentum.
+                College is a time for growth, learning, and exploring. We're here to support your journey every step of the way.
             </p>
         </div>
         <div class="section2-col">
-            <img src="images/feature2.jpg" alt="">
-              <h4>
-                Lorem ipsum dolor.
-              </h4>
+            <div class="circle">
+            <img src="{% static 'images/fi-br-map-marker-plus.png' %}" alt="">
+            </div>  
+            <h4>
+                Community Vibes
+            </h4>
               <p>
-                Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit. Maecenas fermentum.
+                College life is not just about hitting the books; it's about forming lifelong friendships and creating unforgettable memories
               </p>
         </div>
         <div class="section2-col">
-          <img src="images/feature3.jpg" alt="">
+            <div class="circle">
+            <img src="{% static 'images/fi-br-bookmark.png' %}" alt="">
+            </div>
             <h4>
-              Lorem ipsum dolor.
+                Affordability
             </h4>
             <p>
-              Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Maecenas fermentum.
+                We understand the financial challenges of student life. That's why we offer different range for the options
             </p>
         </div>
           
@@ -70,8 +75,13 @@
     <div class="section3-container">
       <div class="section3-left-col">
         <div class="section3-left-col-text">
-
-          <h2 id = "section3-h2-text">WHAT OUR USERS ARE SAYING</h2>
+            <h2 id = "section3-h2-text">
+                WHAT OUR<br>
+                 USERS ARE<br>
+                 SAYING
+                </h2>
+            <img src="{% static 'images/Frame.png' %}" alt="">
+         
             <p>
              
             </p>
@@ -80,8 +90,16 @@
         
       </div>
       <div class="section3-right-col">
-          <img src="" alt="">
-      </div>
+        <div class="review">
+            <p>
+                "I love how Unimate caters to student needs. It's more than just a housing search platform; it's a community. I connected with fellow students and even found a roommate who shares my passion for art. Unimate is a game-changer!"
+            </p>
+            <h5>Isabella S. (5/5 stars)</h5>
+        </div>
+        <div class="section3-img">
+        <img class="" src="{% static 'images/illustration-big-idea.png' %}" alt="Logo">
+        </div>
+    </div>
      
       
     </div>

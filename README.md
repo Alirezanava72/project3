@@ -50,11 +50,76 @@ So, these are the functions needs to meet the needs
 
 Our first goal to work toward was our MVT, so we planned out what we would ideally like to have in the initial working version of our application:
 ---
-### Back-end
-During the build, we employed the following back-end technologies:Python, Django and SQL.
+# Back end:
+---
+Since our application is built around various types of property listings, each with its specific attributes, we have established a set of diverse models. These models include Property, Amenity, and Renting, alongside the central user model, to form the core of our backend infrastructure.
+## Models: 
 
-#### Model
+In our “models.py” file, we have defined three models:
+Amenity: This model represents different amenities that a property can have, like features or facilities. Each amenity is described by its name.
 
+```python
+class Amenity(models.Model):
+  name = models.CharField(max_length=100)
+```
+
+Property: This model represents a property listing with various attributes such as title, address, suburb, state, postcode, details, price, and a    Many-to-Many relationship with amenities.
+
+```python
+class Property(models.Model):
+  title = models.CharField(max_length=50)
+  address = models.TextField(max_length=200)
+  suburb = models.CharField(max_length=50)
+  state = models.CharField(max_length=3)
+  postcode = models.IntegerField()
+  details = models.TextField(max_length=200)
+  price = models.IntegerField()
+  amenities = models.ManyToManyField(Amenity)
+```
+
+
+Renting: This model represents a renting option associated with a specific property. It includes details such as the available date and purpose (house sharing, room sharing, entire property).
+
+```python
+class Renting(models.Model):
+    available_date = models.DateField('availability Date')
+    purpose = models.CharField(
+      max_length=1,
+      choices=PURPOSES,
+      default=PURPOSES[0][0]
+      )
+
+```
+## Views:
+
+In “views.py” file, we defined various view functions and class-based views to handle different actions and interactions with the above models:
+### home and about: 
+Render simple templates for the home and about pages.
+### properties_index: 
+Retrieve all properties from the database and render them on the index page.
+### properties_detail:
+ Retrieve detailed information about a specific property, including its associated amenities and a form to add a new renting option.
+### PropertyAdd, PropertyUpdate, PropertyDelete: 
+Class-based views for creating, updating, and deleting properties(full CRUD functionality).
+add_renting: To handle adding a new renting option to a property.
+### AmenityList, AmenityDetail, AmenityCreate, AmenityUpdate, AmenityDelete: 
+Class-based views for listing amenities, showing individual amenity details, creating, updating, and deleting amenities(full CRUD functionality).
+### assoc_amenity and unassoc_amenity:
+To associate or disassociate an amenity with a property.
+## URLs:
+
+In “urls.py” file, we’ve defined URL patterns that map to the respective views for different actions and interactions:
+URLs related to properties, including property detail, creation, updating, and deletion.
+URLs related to renting options, including adding a new renting option.
+URLs related to amenities, including listing amenities, showing details, creating, updating, and deleting amenities.
+## Forms:
+
+“forms.py” file is defined with RentingForm class that inherits from ModelForm. This form is used for creating renting options associated with a property, allowing users to input the available date and purpose.</br>
+
+Our Django project follows the Model-View-Template (MVT) architecture, where models represent data structures, views handle the logic and interactions, and templates render the user interface.This project focuses on managing property listings, associated amenities, and renting options through well-structured views and models. The provided URLs help to route requests to the appropriate views, and forms simplify the process of collecting user input for creating new renting options.
+## DATABASES:
+
+We have used PostgreSQL as the database backend which allows Django to establish a connection to the specified PostgreSQL database. 
 
 
 ---

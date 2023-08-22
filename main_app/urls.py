@@ -10,6 +10,9 @@ urlpatterns = [
     path('properties/<int:pk>/update/', views.PropertyUpdate.as_view(), name='properties_update'),
     path('properties/<int:pk>/delete/', views.PropertyDelete.as_view(), name='properties_delete'),
     path('properties/<int:property_id>/add_renting/', views.add_renting, name='add_renting'),
+    
+    path('cats/<int:property_id>/add_photo/', views.add_photo, name='add_photo'),
+    
     path('properties/<int:property_id>/assoc_amenity/<int:amenity_id>/', views.assoc_amenity, name='assoc_amenity'),
     path('properties/<int:property_id>/unassoc_amenity/<int:amenity_id>/', views.unassoc_amenity, name='unassoc_amenity'),
     path('amenities/', views.AmenityList.as_view(), name='amenities_index'),
@@ -17,4 +20,5 @@ urlpatterns = [
     path('amenities/create/', views.AmenityCreate.as_view(), name='amenities_create'),
     path('amenities/<int:pk>/update/', views.AmenityUpdate.as_view(), name='amenities_update'),
     path('amenities/<int:pk>/delete/', views.AmenityDelete.as_view(), name='amenities_delete'),
+     
 ]

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import environ
+import os
 
 environ.Env()
 environ.Env.read_env()
@@ -29,7 +30,7 @@ SECRET_KEY = 'django-insecure-kucg_$7n__!=$%=^+2)86(mxqya7ys1qtaupiff5rt026^$)==
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -82,13 +83,16 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'realstate',
-        'HOST': 'localhost', 
-        'USER': 'miyawu',
-        'PASSWORD': 'password',
+        # 'USER': '<USER>',
+        # 'PASSWORD': '<PASSWORD>',
+        # 'HOST': '<HOST>',
         'PORT': '5432',
+        
     }
 }
 
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -130,3 +134,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+import django_heroku
+django_heroku.settings(locals())

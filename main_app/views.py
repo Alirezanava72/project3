@@ -10,6 +10,10 @@ from django.contrib.auth.decorators import login_required
 from .models import Property, Amenity, Photo
 from .forms import RentingForm
 
+import googlemaps
+import json
+from django.conf import settings
+
 
 
 # Create your views here.

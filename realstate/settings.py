@@ -83,9 +83,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'realstate',
-        'USER': '<USER>',
-        'PASSWORD': '<PASSWORD>',
-        'HOST': '<HOST>',
+        # 'USER': '<USER>',
+        # 'PASSWORD': '<PASSWORD>',
+        # 'HOST': '<HOST>',
         'PORT': '5432',
         
     }
@@ -123,6 +123,10 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+
+
+
 
 
 # Static files (CSS, JavaScript, Images)

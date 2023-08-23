@@ -4,8 +4,12 @@ import boto3
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 from .models import Property, Amenity, Photo
 from .forms import RentingForm
+
 
 
 # Create your views here.
@@ -14,13 +18,15 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html')
-
+  
+@login_required
 def properties_index(request):
-    properties = Property.objects.all()
+    properties = Property.objects.filter(user=request.user)
     return render(request, 'properties/index.html', {
         'properties': properties
     })
-
+    
+@login_required
 def properties_detail(request, property_id):
     property = Property.objects.get(id=property_id)
     id_list = property.amenities.all().values_list('id')
@@ -36,7 +42,10 @@ def properties_detail(request, property_id):
 class PropertyAdd(CreateView):
     model = Property
     fields = ['title', 'address', 'suburb', 'state', 'postcode', 'details', 'price']
-
+    def form_valid(self, form):
+      form.instance.user = self.request.user 
+      return super().form_valid(form)
+    
 class PropertyUpdate(UpdateView):
   model = Property
   fields = ['title', 'address', 'suburb', 'state', 'postcode', 'details', 'price']
@@ -73,30 +82,43 @@ class AmenityDelete(DeleteView):
   model = Amenity
   success_url = '/amenities'     
 
-
+@login_required
 def assoc_amenity(request, property_id, amenity_id):
     Property.objects.get(id=property_id).amenities.add(amenity_id)
     return redirect('detail', property_id=property_id)
-
+  
+@login_required
 def unassoc_amenity(request, property_id, amenity_id):
     Property.objects.get(id=property_id).amenities.remove(amenity_id)
     return redirect('detail', property_id=property_id)
   
+@login_required 
 def add_photo(request, property_id):
-    # photo-file will be the "name" attribute on the <input type="file">
     photo_file = request.FILES.get('photo-file', None)
     if photo_file:
         s3 = boto3.client('s3')
-        # need a unique "key" for S3 / needs image file extension too
         key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
-        # just in case something goes wrong
         try:
             bucket = os.environ['S3_BUCKET']
             s3.upload_fileobj(photo_file, bucket, key)
-            # build the full url string
             url = f"{os.environ['S3_BASE_URL']}{bucket}/{key}"
             Photo.objects.create(url=url, property_id=property_id)
         except Exception as e:
             print('An error occurred uploading file to S3')
             print(e)
     return redirect('detail', property_id=property_id)
+  
+
+def signup(request):
+  error_message = ''
+  if request.method == 'POST':
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+      user = form.save()
+      login(request, user)
+      return redirect('index')
+    else:
+      error_message = 'Invalid sign up - try again'
+  form = UserCreationForm()
+  context = {'form': form, 'error_message': error_message}
+  return render(request, 'registration/signup.html', context)

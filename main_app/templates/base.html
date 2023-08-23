@@ -32,12 +32,16 @@
           </div>
           <ul class="right">
             <li><a href="{% url 'about' %}">About</a></li>
+            {% if user.is_authenticated %}
             <li><a href="{% url 'amenities_create' %}">Add an Amenity</a></li>
-            <li>
-              <a href="{% url 'amenities_index' %}">View All Amenities</a>
-            </li>
+            <li><a href="{% url 'amenities_index' %}">View All Amenities</a></li>
             <li><a href="{% url 'properties_add' %}">Add a new Property</a></li>
             <li><a href="{% url 'index' %}">View All Properties</a></li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Log In</a></li>
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            {% endif %}
           </ul>
         </div>
       </nav>

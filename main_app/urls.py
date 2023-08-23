@@ -20,5 +20,6 @@ urlpatterns = [
     path('amenities/create/', views.AmenityCreate.as_view(), name='amenities_create'),
     path('amenities/<int:pk>/update/', views.AmenityUpdate.as_view(), name='amenities_update'),
     path('amenities/<int:pk>/delete/', views.AmenityDelete.as_view(), name='amenities_delete'),
+    path('accounts/signup/', views.signup, name='signup'),
      
 ]

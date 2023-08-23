@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from datetime import date
+from django.contrib.auth.models import User
 
 PURPOSES = (
   ('H', 'House Sharing'),
@@ -30,6 +32,7 @@ class Property(models.Model):
   details = models.TextField(max_length=200)
   price = models.IntegerField()
   amenities = models.ManyToManyField(Amenity)
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
   def __str__(self):

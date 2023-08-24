@@ -4,10 +4,15 @@
 By team of [Alireza](https://github.com/Alirezanava72),[Miya Miah](https://github.com/miya-w)
 ## Overview
 ![web-home](https://github.com/Alirezanava72/project3/blob/main/README-img/web-home.png)
-![web-details](https://github.com/Alirezanava72/project3/blob/main/README-img/web-property-detail.png)
-
+---
 The third project of the software engineering immersive course at GA Australia. The assignment was to create a full-stack application with Python, Django, SQL. This project was completed in a team of 2 within a week.
 About **UniMate**. It’s a platform is designed for university students seeking hassle-free accommodation solutions. Whether you're on the hunt for the perfect shared room or looking for a compatible housemate to share your space with.
+- Property detail
+![web-details](https://github.com/Alirezanava72/project3/blob/main/README-img/web-property-detail.png)
+- Amenity
+![web-amenity](https://github.com/Alirezanava72/project3/blob/main/README-img/web-amenity.png)
+- Amenity details
+![Amenity details](https://github.com/Alirezanava72/project3/blob/main/README-img/web-property-details-amenity.png)
 
 ## Table of Contents
 1. [Brief](#Project-Brief)

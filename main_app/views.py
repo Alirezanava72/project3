@@ -10,6 +10,10 @@ from django.contrib.auth.decorators import login_required
 from .models import Property, Amenity, Photo
 from .forms import RentingForm
 
+import googlemaps
+import json
+from django.conf import settings
+
 
 
 # Create your views here.
@@ -111,14 +115,13 @@ def add_photo(request, property_id):
 
 def signup(request):
   error_message = ''
+  form = UserCreationForm(request.POST)
   if request.method == 'POST':
-    form = UserCreationForm(request.POST)
     if form.is_valid():
       user = form.save()
       login(request, user)
       return redirect('index')
     else:
       error_message = 'Invalid sign up - try again'
-  form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)

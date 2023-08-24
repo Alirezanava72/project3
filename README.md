@@ -1,5 +1,5 @@
-![GA Logo](./images/)
-# Project 3 - UniMate
+
+# General Assembly SEI Project 3 - UniMate
 By team of [Alireza](https://github.com/Alirezanava72),[Miya Miah](https://github.com/miya-w)
 ## Overview
 ![]()
@@ -55,10 +55,10 @@ After settling on the needs we began to build up our project:
 
 
 #### Figma and Trello
-![Trello]()
+![Trello](https://github.com/Alirezanava72/project3/blob/main/README-img/trello.png)
 We used **Trello** throughout the process as our project management tool. With this online tool, It's much easier to assign the job and schedule. We created the three main boards: todo, doing and done, which help us to see the job schedule.
 
-![Figma]()
+![Figma](https://github.com/Alirezanava72/project3/blob/main/README-img/figma.png)
 **Figma** is an online disign tool to create the UI.
 
 #### MVT (Model View Template)
@@ -139,7 +139,8 @@ We have used PostgreSQL as the database backend which allows Django to establish
 
 ---
 ### Front-end
-
+- In this project, we didn't use any CSS framework, so it took us some time to do the Responsive Web Design. We used the developer tool to debug. A good example is the front end set the section in Vh hight abd it cause the fail of responsive web design.
+- In Django, it has the Material style by default, we keep it so this project can be done before the deadline.  It's a bit challenging to integrate the design with the new CSS and the existing Material CSS.
 
 
 ## Challenges and Lessons Learned
@@ -161,4 +162,4 @@ As we learned from Git co-work, was important. discuss tasks, share insights, an
 
 ### Resources
 ---
-[Project 3 - brief]()
+[Project 3 - brief](https://git.generalassemb.ly/seir66anz/project-3-brief)

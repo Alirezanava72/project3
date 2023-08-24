@@ -14,10 +14,17 @@
   --dark-grey: #222831;
 }
 
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+  color: var(--blue);
+  font-weight: 500;
+
+}
+
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  color:var(--dark-blue)
 }
 
 .btn,
@@ -204,60 +211,41 @@ main {
 }
 .section2-container h4 {
   margin-bottom: 15px;
-  font-size: 20px;
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+.section2-container p {
+  font-size: 1em;
   font-weight: 400;
 }
 
 /*----------section3--------------*/
 
 #section3{
-  /* height: 60vh; */
+  height: 40vh;
  /* padding: 100px 0; */
  display: flex;
  align-items: center;
- flex-wrap: wrap;
+ justify-content:center;
   position: relative;  
-  /* border: dotted red;   */
+  border: dotted red;  
 }
 
-.section3-left-col{
-  flex-basis: 50%;
-  /* border: dotted black; */
-  position: relative;  
-}
-.section3-left-col > img{
-  width: 200%;
-}
-#section3-h2-text{
-  font-size: 4em;
-}
-.section1-left-col img{
-  z-index: -5;
-  position: absolute;
-  left:0;
-  bottom: 0;
-}
-
-.section3-right-col{
-  flex-basis: 50%;
-  text-align: right;
-  display: flex;
-  justify-content:center;
-  border: solid var(--dark-blue) 30px;
-  border-radius: 5%;  
-   
-}
 
 .section3-text{
   background-color: var(--white);
-  max-width: 500px;
-  margin-right: 100px;
-  display: inline-block;
-  margin-right: 20px;
-  padding-right: 30px;
-  border: solid var(--white) 10px;
-  border-radius: 5%;
+  text-align: center;
+  padding: 30px;
+  border: solid var(--light-blue) 10px;
+ 
 }
+#section3-title{
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--blue);
+}
+
 .section3-text h2{
   margin: 50px 0 10px;
   font-size: 2em;
@@ -269,6 +257,9 @@ main {
   font-size: 20px;    
   font-style: italic;
   color: var(--light-blue)
+}
+#section3-name{
+ margin-right: 0px;
 }
 
 /*----------Footer-------------*/
@@ -325,11 +316,23 @@ footer.page-footer {
   font-family: "Inter", sans-serif;
 }
 
+/* detail - google map iframe */
 
-
-.about-test{
-  color:var(--dark-blue);
+.google-map {
+  overflow:hidden;
+  padding-bottom: 50%;
+  position: relative;
 }
+
+.google-map iframe {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+
 
 
 
@@ -341,20 +344,11 @@ footer.page-footer {
 /* header */
 @media only screen and (max-width:767px) {
     
-  header{
-          
-          max-height: 60vh;
-          margin: 0px;
-          padding: 0px;
-      }
-  
-  .page-header-container{
-      
-      margin-left: 15px;
-      min-width: 350px;;
-       
-  }
-  
+
+
+section{
+  margin: 30px;;
+}
   
   .logo{
         width: auto;
@@ -365,23 +359,19 @@ footer.page-footer {
       }
   
   
-  .navbar__menu ul{
+  .nav ul{
       padding: 5px 10px 5px 0px;
       margin-right: 2px ;
       text-align: right;
   }
   
-  .navbar__menu a {
+  .nav a {
       text-decoration: none;
       color: white;
-      font-size: 16px;
+      font-size: 10px;
       }
       
-  
-  .header-text{
-      max-width: 300px;
-      margin-top: 100px;
-  }
+
   
   h1{
       font-size: 25px;
@@ -428,56 +418,31 @@ footer.page-footer {
   
   /*----------@media section3-----*/
   
-  .section3-left-col{
-      flex-basis: 100%;
-      margin-bottom: 20px;    
+
+  #section3-title{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--blue);
   }
   
-  .section3-right-col img{
-      width: 80%;
-  
-      
+  .section3-text h2{
+    margin: 5px;
+    font-size: 1em;
+   
   }
+
+
+.section3-text{
+  padding: 10px;
+}
   
-  .section3-right-col{
-      flex-basis: 100%;
-      margin-top: 20px;
-  
-  }
-  
-  .section3-left-col-text{
-      padding-left: 50px;
-      padding-right: 50px;
-      max-width: 350px;
-  
-  }
-  /* --------@media section4-------- */
-  
-  .section4-left-col {
-      flex-basis: 100%;
-      /* margin-left: 20px; */
-      
-  }
-  .section4-right-col{
-      flex-basis: 100%;
-      /* margin-right: 20px;  */
-      padding: 20px 20px 30px 30px;
-      align-items: center;
-      align-content: center;
-  }
-  
-  .section4-left-col img{
-      width: 100%;
-  }
-  
-  
-    
-    .container {
-      border-radius: 5px;
-      padding: 20px;
-    }
+
+
+ 
  
   }
   
+
+
   /* ------Footer--------- */
   

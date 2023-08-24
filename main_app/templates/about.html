@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
  <div class="container-about'">
 
     <h1 class="about-test">About the UniMate</h1>
+    <div class="about-img">
+        <img src="{% static 'images/illustration-about.png' %}" alt="">
+    </div>
+    <div class="about-text">
     <hr>
+    <h3>How Could We help you?</h3>
     <p>
-        Find Your Ideal Room: Tired of spending countless hours searching for suitable student housing options? With CalUnimate, you can effortlessly browse through a curated list of available shared rooms and apartments near your university.
+        Find Your Ideal Room:Tired of spending countless hours searching for suitable student housing options? With CalUnimate, you can effortlessly browse through a curated list of available shared rooms and apartments near your university.
     </p>
     <p>
         Connect with Potential Housemates: Finding the right housemate can make all the difference in creating a comfortable and enjoyable living environment. 
@@ -23,6 +28,7 @@
         Explore Rental History: As a user, you can access the rental history of a property, giving you insight into its past occupants and their experiences.
 
     </p>
+</div>
 
  </div>
 

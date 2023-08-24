@@ -14,9 +14,12 @@
              <p>
                 Are you ready to embark on an unforgettable journey through your college years? At UniMate, we're here to make sure your student experience is nothing short of amazing.
              </p>
-             <button class="common-btn" id="">
-                Find Your Room or Roommate  
-              </button> 
+             
+              <a href="{% url 'about'%}">
+                <button class="common-btn" id="">
+                  Find Out More 
+                </button> 
+              </a>
            </div>
      
     </div>
@@ -68,7 +71,35 @@
       </div>
   </section>
 
-  <section id="section3" data-nav="Section 3">
+  <section id="section3" data-nav="Section 3" class="your-active-class">
+     
+    <div class="landing__container"></div>
+    <div class="section1-left-col">
+      <h2 id = "section3-h2-text">
+        WHAT OUR<br>
+         USERS ARE<br>
+         SAYING
+        </h2>
+    <img src="{% static 'images/Frame.png' %}" alt="">
+    </div>
+       
+      <div class="section3-right-col">
+        <div class="section3-text">
+    
+            <h2>
+              "I love how Unimate caters to student needs. It's more than just a housing search platform; it's a community. I connected with fellow students and even found a roommate who shares my passion for art. Unimate is a game-changer!"
+
+            </h2>
+            <h3>
+              Isabella S. (5/5 stars)
+            </h3>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  {% comment %} <section id="section3" data-nav="Section 3">
     <div class="section3-container">
       <div class="section3-left-col">
         <div class="section3-left-col-text">
@@ -96,7 +127,7 @@
     </div>
     </div>
     <!-- <hr class="hr-section3"> -->
-  </section>
+  </section> {% endcomment %}
 
    
  {% endblock %}

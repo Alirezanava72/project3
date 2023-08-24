@@ -1,8 +1,11 @@
 
 # General Assembly SEI Project 3 - UniMate
+[UniMate on Heroku](https://project3-realstate-c135ee1a757c.herokuapp.com/)
 By team of [Alireza](https://github.com/Alirezanava72),[Miya Miah](https://github.com/miya-w)
 ## Overview
-![]()
+![web-home](https://github.com/Alirezanava72/project3/blob/main/README-img/web-home.png)
+![web-details](https://github.com/Alirezanava72/project3/blob/main/README-img/web-property-detail.png)
+
 The third project of the software engineering immersive course at GA Australia. The assignment was to create a full-stack application with Python, Django, SQL. This project was completed in a team of 2 within a week.
 About **UniMate**. It’s a platform is designed for university students seeking hassle-free accommodation solutions. Whether you're on the hunt for the perfect shared room or looking for a compatible housemate to share your space with.
 
@@ -12,7 +15,6 @@ About **UniMate**. It’s a platform is designed for university students seeking
 3. [Approach](#Approach)
     - [Planning](#Planning)
     - [Back-end](#Back-end)
-    - [A Journey](#A-Journey)
     - [Front-end](#Front-end)
 - [Challenges and Lessons Learned](#Challenges-and-Lessons-Learned)
 - [Victories](Victories)
@@ -139,27 +141,33 @@ We have used PostgreSQL as the database backend which allows Django to establish
 
 ---
 ### Front-end
+
+![Phone](https://github.com/Alirezanava72/project3/blob/main/README-img/web-phone.png)
+#### Responsive
+
 - In this project, we didn't use any CSS framework, so it took us some time to do the Responsive Web Design. We used the developer tool to debug. A good example is the front end set the section in Vh hight abd it cause the fail of responsive web design.
 - In Django, it has the Material style by default, we keep it so this project can be done before the deadline.  It's a bit challenging to integrate the design with the new CSS and the existing Material CSS.
 
 
 ## Challenges and Lessons Learned
-#### Using Git collaboratively 
+### Using Git collaboratively 
 This was our first project where we coded collaboratively using Git - allowing us to understand the complexities of merging and conflict resolution. Working as a team with Git was challenging, especially when we had any miscommunication and it might cause conflicts. During this project, we didn't reach an agreement on the way to commit to Git, so it took us some time to fix the problem of the branch that was created to merge with the main. Git is definitely the biggest lesson in this project.
-#### Smart Team Work By Using the Online Tools. 
+### Smart Team Work By Using the Online Tools. 
 Each team member was assigned specific cards representing tasks or objectives within the project in Trello. We recognized early on that clear task descriptions were import. This approach ensured that our project remained on track. 
 
-#### communication, communication, communication
+### communication, communication, communication
 As we learned from Git co-work, was important. discuss tasks, share insights, and provide updates. Daily check-ins, like our Git commits, were scheduled to review progress and resolve any ambiguities. Apart from code, communication is a big part of team work.
 
-## Wins
+# Wins
 - Teamwork - This is the first group project in this boot camp Though challenging at points, it was overall an incredibly valuable experience as I learnt how to work as part of a team whilst building a full-stack application across lots of components. 
 
 ## Future Features and Improvements
 - Create the public List 
+- Create the space for the properties list and roomamte list
 - Improve the UI
 - Using the Google Map API to calculate the distance
 
 ### Resources
 ---
 [Project 3 - brief](https://git.generalassemb.ly/seir66anz/project-3-brief)
+[Project 3- link](https://project3-realstate-c135ee1a757c.herokuapp.com/)

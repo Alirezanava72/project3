@@ -21,8 +21,6 @@ class Amenity(models.Model):
 
 
 
-
-
 class Property(models.Model):
   title = models.CharField(max_length=50)
   address = models.TextField(max_length=200)

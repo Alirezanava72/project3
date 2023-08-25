@@ -1,6 +1,6 @@
 
 # General Assembly SEI Project 3 - UniMate
-[UniMate on Heroku](https://project3-realstate-c135ee1a757c.herokuapp.com/)
+[UniMate](https://project3-realstate-c135ee1a757c.herokuapp.com/)
 By team of [Alireza](https://github.com/Alirezanava72),[Miya Miah](https://github.com/miya-w)
 ## Overview
 ![web-home](https://github.com/Alirezanava72/project3/blob/main/README-img/web-home.png)
@@ -63,22 +63,34 @@ After settling on the needs we began to build up our project:
 
 #### Figma and Trello
 ![Trello](https://github.com/Alirezanava72/project3/blob/main/README-img/trello.png)
-We used **Trello** throughout the process as our project management tool. With this online tool, It's much easier to assign the job and schedule. We created the three main boards: todo, doing and done, which help us to see the job schedule.
+We used **Trello** throughout the process as our project management tool. With this online tool, It's much easier to assign the job and schedule. We created the three main boards: todo, doing and done, which help us to make sure everything is on track.
 
 ![Figma](https://github.com/Alirezanava72/project3/blob/main/README-img/figma.png)
 **Figma** is an online disign tool to create the UI.
 
+## Deployment
+UniMate has been deployed to Heroku. [Find me on Heroku](https://project3-realstate-c135ee1a757c.herokuapp.com/)
+Heroku is a platform-as-a-service (PaaS) that allows you to deploy, manage, and scale web applications without needing to manage infrastructure. It supports various programming languages, including Python, and provides tools to simplify deployment and application management which we have used to deploy the Unimate web application.
+
 #### MVT (Model View Template)
 Our first goal to work toward was our MVT, so we planned out what we would ideally like to have in the initial working version of our application:
+
+#### ERD
+![ERD](https://github.com/Alirezanava72/project3/blob/main/README-img/erd.png)
+- Property has a many-to-many relationship with Amenity. A property can have multiple amenities, and an amenity can be associated with multiple properties.
+- Property has a one-to-many relationship with Renting. One property can have multiple rental listings.
+- Property has a one-to-many relationship with Photo. Many rental listings are associated with one property.
 
 ## Back end:
 
 Since our application is built around various types of property listings, each with its specific attributes, we have established a set of diverse models. These models include Property, Amenity, and Renting, alongside the central user model, to form the core of our backend infrastructure.
+![](https://github.com/Alirezanava72/project3/blob/main/README-img/figma.png)
 
 ### Models: 
 
-In our “models.py” file, we have defined three models:
 Amenity: This model represents different amenities that a property can have, like features or facilities. Each amenity is described by its name.
+
+
 
 ```python
 class Amenity(models.Model):
@@ -143,14 +155,13 @@ Our Django project follows the Model-View-Template (MVT) architecture, where mod
 
 We have used PostgreSQL as the database backend which allows Django to establish a connection to the specified PostgreSQL database. 
 
-
 ---
 ### Front-end
 
 ![Phone](https://github.com/Alirezanava72/project3/blob/main/README-img/web-phone.png)
 #### Responsive
 
-- In this project, we didn't use any CSS framework, so it took us some time to do the Responsive Web Design. We used the developer tool to debug. A good example is the front end set the section in Vh hight abd it cause the fail of responsive web design.
+- In this project, we didn't use any CSS framework, so it took us some time to do the Responsive Web Design. We used the developer tool to debug. A good example is the front end set the sections in vh hight and it causd the fail of responsive web design.
 - In Django, it has the Material style by default, we keep it so this project can be done before the deadline.  It's a bit challenging to integrate the design with the new CSS and the existing Material CSS.
 
 
@@ -161,10 +172,10 @@ This was our first project where we coded collaboratively using Git - allowing u
 Each team member was assigned specific cards representing tasks or objectives within the project in Trello. We recognized early on that clear task descriptions were import. This approach ensured that our project remained on track. 
 
 ### communication, communication, communication
-As we learned from Git co-work, was important. discuss tasks, share insights, and provide updates. Daily check-ins, like our Git commits, were scheduled to review progress and resolve any ambiguities. Apart from code, communication is a big part of team work.
+As we learned from Git co-work, communication was important. discuss tasks, share insights, and provide updates. Daily check-ins, Git commits, were scheduled to review progress and resolve any ambiguities. Apart from code, communication is a big part of team work.
 
 # Wins
-- Teamwork - This is the first group project in this boot camp Though challenging at points, it was overall an incredibly valuable experience as I learnt how to work as part of a team whilst building a full-stack application across lots of components. 
+- Teamwork - This is the first group project in this boot camp, it was challenging at points,but it was overall an incredibly valuable experience as we learnt how to work as part of a team while building a full-stack application across lots of components. 
 
 ## Future Features and Improvements
 - Create the public List 

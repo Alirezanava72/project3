@@ -22,9 +22,8 @@ About **UniMate**. It’s a platform is designed for university students seeking
     - [Back-end](#Back-end)
     - [Front-end](#Front-end)
 - [Challenges and Lessons Learned](#Challenges-and-Lessons-Learned)
-- [Victories](Victories)
+- [Wins](Wins)
 - [Future Features and Improvements](#Future-Features-and-Improvements)
-- [Credit](#Credit) 
 
 ## Project Brief
 - Build a full-stack application
@@ -48,7 +47,7 @@ So, these are the functions needs to meet the needs
 - As a user, I want to add the room for renting 
 - As a user, I want to share the amenities the property provides.
 - As a user, I want to see the list of the renting room.
-- As a user, I want to see the lease date.
+- As a user, I want to see the lease date and rent.
 
 After settling on the needs we began to build up our project:
 
@@ -56,8 +55,8 @@ After settling on the needs we began to build up our project:
 2. Discuss how to design the models for our UniMate application.
 3. While the back end is in process, Front end developer starts the UI with the wireframe and then draws it on Figma.
 4. After the back-end developer finishes the Models, URLs and Views, the front-end developer starts the HTML and CSS.
-5. Once we make sure we finish and meet all requirements, we start to add the extra features.
- 6. Review and polish the code.
+5. Once we had make sure we finish and meet all requirements, we started to add the extra features.
+6. Review and polish the code.
 
 
 
@@ -75,7 +74,7 @@ Heroku is a platform-as-a-service (PaaS) that allows you to deploy, manage, and 
 #### MVT (Model View Template)
 Our first goal to work toward was our MVT, so we planned out what we would ideally like to have in the initial working version of our application:
 
-#### ERD
+#### ERD(entity relationship diagram)
 ![ERD](https://github.com/Alirezanava72/project3/blob/main/README-img/erd.png)
 - Property has a many-to-many relationship with Amenity. A property can have multiple amenities, and an amenity can be associated with multiple properties.
 - Property has a one-to-many relationship with Renting. One property can have multiple rental listings.
@@ -84,19 +83,10 @@ Our first goal to work toward was our MVT, so we planned out what we would ideal
 ## Back end:
 
 Since our application is built around various types of property listings, each with its specific attributes, we have established a set of diverse models. These models include Property, Amenity, and Renting, alongside the central user model, to form the core of our backend infrastructure.
-![](https://github.com/Alirezanava72/project3/blob/main/README-img/figma.png)
 
 ### Models: 
 
-Amenity: This model represents different amenities that a property can have, like features or facilities. Each amenity is described by its name.
-
-
-
-```python
-class Amenity(models.Model):
-  name = models.CharField(max_length=100)
-```
-Property: This model represents a property listing with various attributes such as title, address, suburb, state, postcode, details, price, and a    Many-to-Many relationship with amenities.
+Property: This model represents a property listing with various attributes such as title, address, suburb, state, postcode, details, price, and a Many-to-Many relationship with amenities.
 
 ```python
 class Property(models.Model):
@@ -110,6 +100,12 @@ class Property(models.Model):
   amenities = models.ManyToManyField(Amenity)
 ```
 
+Amenity: This model represents different amenities that a property can have, like features or facilities. Each amenity is described by its name.
+
+```python
+class Amenity(models.Model):
+  name = models.CharField(max_length=100)
+```
 
 Renting: This model represents a renting option associated with a specific property. It includes details such as the available date and purpose (house sharing, room sharing, entire property).
 
@@ -180,7 +176,7 @@ As we learned from Git co-work, communication was important. discuss tasks, shar
 ## Future Features and Improvements
 - Create the public List 
 - Create the space for the properties list and roomamte list
-- Improve the UI
+- Improve the UI and UX for user to creat the amenity list.
 - Using the Google Map API to calculate the distance
 
 ### Resources
